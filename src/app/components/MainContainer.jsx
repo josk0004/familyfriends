@@ -1,49 +1,86 @@
-import PhoneStuff from "../components/PhoneStuff";
 import SortingOptions from "../components/SortingOptions";
 import Image from "next/image";
 import Link from "next/link";
-import { IoIosNotificationsOutline } from "react-icons/io";
+import AnimalCard from "./AnimalCard";
 
 const MainContainer = () => {
   return (
     <div className="m-0 p-0">
       <SortingOptions />
-      <Image
-        loading="eager"
-        src="https://placecats.com/neo/300/200"
-        alt="Description of image"
-        width={500}
-        height={300}
-      />
-      <Image
-        loading="eager"
-        src="https://placecats.com/neo/300/200"
-        alt="Description of image"
-        width={500}
-        height={300}
-      />
-      <Image
-        loading="eager"
-        src="https://placecats.com/neo/300/200"
-        alt="Description of image"
-        width={500}
-        height={300}
-      />
-      <Image
-        loading="eager"
-        src="https://placecats.com/neo/300/200"
-        alt="Description of image"
-        width={500}
-        height={300}
-      />
-      <Image
-        loading="eager"
-        src="https://placecats.com/neo/300/200"
-        alt="Description of image"
-        width={500}
-        height={300}
-      />
-      <Link href="/detalje">Go to Detalje Page</Link>
+      <div className="columns-2 gap-4 px-6">
+        <AnimalCard
+          name={"Alfred"}
+          age={"young"}
+          breed={"Lorem ipsum dolor sit amet"}
+          favorite={true}
+        />
+        <AnimalCard
+          name={"Bella"}
+          age={"adult"}
+          breed={"Persian"}
+          favorite={false}
+        />
+        <AnimalCard
+          name={"Alfred"}
+          age={"young"}
+          breed={"Siamese"}
+          favorite={false}
+        />
+        <AnimalCard
+          name={"Bella"}
+          age={"adult"}
+          breed={"Lorem ipsum dolor sit amet"}
+          favorite={false}
+        />
+        <AnimalCard
+          name={"Alfred"}
+          age={"young"}
+          breed={"Lorem ipsum dolor sit amet"}
+          favorite={true}
+        />
+        <AnimalCard
+          name={"Bella"}
+          age={"adult"}
+          breed={"Persian"}
+          favorite={false}
+        />
+        <AnimalCard
+          name={"Alfred"}
+          age={"young"}
+          breed={"Siamese"}
+          favorite={false}
+        />
+        <AnimalCard
+          name={"Bella"}
+          age={"adult"}
+          breed={"Lorem ipsum dolor sit amet"}
+          favorite={false}
+        />
+        <AnimalCard
+          name={"Alfred"}
+          age={"young"}
+          breed={"Lorem ipsum dolor sit amet"}
+          favorite={true}
+        />
+        <AnimalCard
+          name={"Bella"}
+          age={"adult"}
+          breed={"Persian"}
+          favorite={false}
+        />
+        <AnimalCard
+          name={"Alfred"}
+          age={"young"}
+          breed={"Siamese"}
+          favorite={false}
+        />
+        <AnimalCard
+          name={"Bella"}
+          age={"adult"}
+          breed={"Lorem ipsum dolor sit amet"}
+          favorite={false}
+        />
+      </div>
     </div>
   );
 };

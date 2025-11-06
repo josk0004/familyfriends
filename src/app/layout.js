@@ -4,6 +4,7 @@ import "./globals.css";
 import PhoneStuff from "./components/PhoneStuff";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import FooterNav from "./components/FooterNav";
+import Link from "next/link";
 
 const manropeFont = Manrope({
   variable: "--font-base-manrope",
@@ -23,13 +24,17 @@ export default function RootLayout({ children }) {
       >
         <div className="font-manrope relative mx-auto flex h-[812px] max-h-screen w-[375px] flex-col overflow-x-hidden rounded-4xl bg-white">
           <PhoneStuff />
-          <div className="flex items-center justify-between px-6 pb-6">
-            <h1 className="text-lg font-bold">FamilyFriends</h1>
-            <IoIosNotificationsOutline size={24} />
-          </div>
 
           {/* Scrollable content area: keeps footer fixed at container bottom */}
-          <div className="flex-1 overflow-y-auto pb-24">{children}</div>
+          <div className="scrollbarHide flex-1 overflow-y-auto">
+            <div className="flex items-center justify-between px-6 pt-4 pb-6">
+              <Link href="/">
+                <h1 className="text-lg font-bold">FamilyFriends</h1>
+              </Link>
+              <IoIosNotificationsOutline size={24} />
+            </div>
+            {children}
+          </div>
 
           <FooterNav />
         </div>

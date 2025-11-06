@@ -5,6 +5,7 @@
   --foreground: #171717;
   --grayish: #acacac;
   --perimore: #f2968f;
+  --darkgray: #333333;
 }
 
 @theme inline {
@@ -13,13 +14,17 @@
   --color-grayish: var(--grayish);
   --color-perimore: var(--perimore);
   --font-manrope: var(--font-base-manrope);
+  --color-darkgray: var(--darkgray);
+  --shadow-animal-card: 0 4px 16px 0 rgba(19, 21, 68, 0.06);
 }
 
-.sortingOptions::-webkit-scrollbar {
+.sortingOptions::-webkit-scrollbar,
+.scrollbarHide::-webkit-scrollbar {
   display: none;
 }
 
-.sortingOptions {
+.sortingOptions,
+.scrollbarHide {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
