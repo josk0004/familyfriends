@@ -1,6 +1,6 @@
 import AnimalImage from "@/app/components/AnimalImage";
 import AnimalDetails from "@/app/components/AnimalDetails";
-import AdobtButton from "@/app/components/AdobtButton";
+import AdoptButton from "@/app/components/AdobtButton";
 
 export const metadata = {
   title: "Detalje — FamilyFriends",
@@ -25,7 +25,7 @@ const detalje = () => {
         regn og vandpytter.
       </p>
       <p className="text-grayish mx-6 text-sm">Opdateret den 13. juli.</p>
-      <AdobtButton name="Fluffy" />
+      <AdoptButton name="Fluffy" />
     </div>
   );
 };
