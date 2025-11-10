@@ -3,7 +3,7 @@ import { RiStarLine } from "react-icons/ri";
 import { RiStarFill } from "react-icons/ri";
 import Link from "next/link";
 
-const ProductCard = ({ title, price, category, key, id, img, favorite }) => {
+const ProductCard = ({ title, price, category, id, img, favorite }) => {
   return (
     <div className="shadow-animal-card mb-4 break-inside-avoid rounded-2xl">
       <div className="grid grid-cols-1 grid-rows-1">

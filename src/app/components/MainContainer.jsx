@@ -1,14 +1,12 @@
 import SortingOptions from "../components/SortingOptions";
-import Image from "next/image";
-import Link from "next/link";
 import ProductList from "./ProductList";
 
-const MainContainer = () => {
+const MainContainer = ({ category }) => {
   return (
     <div className="m-0 p-0">
-      <SortingOptions />
+      <SortingOptions activeCategory={category} />
       <div className="columns-2 gap-4 px-6">
-        <ProductList />
+        <ProductList category={category} />
       </div>
     </div>
   );

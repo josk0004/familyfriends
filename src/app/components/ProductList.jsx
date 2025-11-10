@@ -1,16 +1,23 @@
 import { Suspense } from "react";
 import ProductCard from "./ProductCard";
 
-const ProductList = async () => {
+const ProductList = async ({ category }) => {
   return (
     <Suspense fallback={<p>Loading products...</p>}>
-      <FetchProducts />
+      <FetchProducts category={category} />
     </Suspense>
   );
 };
 
-const FetchProducts = async () => {
-  const data = await fetch("https://dummyjson.com/products");
+const FetchProducts = async ({ category }) => {
+  let url = "https://dummyjson.com/products";
+
+  if (category && category !== "All") {
+    const normalizedCategory = category.toLowerCase();
+    url = `https://dummyjson.com/products/category/${normalizedCategory}`;
+  }
+
+  const data = await fetch(url);
   const { products } = await data.json();
 
   return products.map((product) => (
