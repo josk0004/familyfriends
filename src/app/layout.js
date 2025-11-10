@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
               <Link href="/">
                 <h1 className="text-lg font-bold">FamilyFriends</h1>
               </Link>
-              <IoIosNotificationsOutline size={24} />
+              <IoIosNotificationsOutline size={24} className="cursor-pointer" />
             </div>
             {children}
           </div>

@@ -7,7 +7,7 @@ const SortingOption = ({ label, active }) => {
       <div className="h-8 w-8 rounded-full">
         <Image
           loading="eager"
-          src="https://placecats.com/neo/300/300"
+          src="https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp"
           alt="Description of image"
           width={32}
           height={32}
