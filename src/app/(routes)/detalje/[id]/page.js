@@ -1,5 +1,3 @@
-"use cache";
-
 import ProductImage from "@/app/components/ProductImage";
 import ProductDetails from "@/app/components/ProductDetails";
 import BuyButton from "@/app/components/BuyButton";
