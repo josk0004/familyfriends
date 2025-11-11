@@ -14,7 +14,8 @@ export async function generateMetadata({ params }) {
   return { title: `${product.title} — FamilyFriends` };
 }
 
-export default async function Detalje({ params }) {
+const FetchProduct = async ({ params }) => {
+  "use cache";
   const { id } = await params;
   const data = await fetch(`https://dummyjson.com/products/${id}`);
   const product = await data.json();
@@ -47,4 +48,8 @@ export default async function Detalje({ params }) {
       </div>
     </Suspense>
   );
+};
+
+export default async function Detalje({ params }) {
+  return <FetchProduct params={params} />;
 }
