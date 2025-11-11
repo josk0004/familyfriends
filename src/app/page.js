@@ -1,12 +1,14 @@
 import { Suspense } from "react";
 import MainContainer from "./components/MainContainer";
 
-export default async function Home({ searchParams }) {
-  const params = await searchParams;
-  const category = params?.category || "All";
+export default function Home({ searchParams }) {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <MainContainer category={category} />
+    <Suspense
+      fallback={
+        <div className="text-grayish mx-6 text-xl font-black">Loading...</div>
+      }
+    >
+      <MainContainer searchParams={searchParams} />
     </Suspense>
   );
 }

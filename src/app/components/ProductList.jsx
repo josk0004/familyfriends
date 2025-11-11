@@ -1,19 +1,14 @@
-import { Suspense } from "react";
 import ProductCard from "./ProductCard";
 
 const ProductList = async ({ category }) => {
-  return (
-    <Suspense fallback={<p>Loading products...</p>}>
-      <FetchProducts category={category} />
-    </Suspense>
-  );
+  return <FetchProducts category={category} />;
 };
 
 const FetchProducts = async ({ category }) => {
   let url = "https://dummyjson.com/products";
 
   if (category && category !== "All") {
-    const normalizedCategory = category.toLowerCase();
+    const normalizedCategory = category.toLowerCase().replace(/\s+/g, "-");
     url = `https://dummyjson.com/products/category/${normalizedCategory}`;
   }
 
