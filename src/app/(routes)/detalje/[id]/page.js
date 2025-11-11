@@ -1,3 +1,5 @@
+"use cache";
+
 import ProductImage from "@/app/components/ProductImage";
 import ProductDetails from "@/app/components/ProductDetails";
 import BuyButton from "@/app/components/BuyButton";
@@ -15,7 +17,6 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Detalje({ params }) {
-  "use cache";
   const { id } = await params;
   const data = await fetch(`https://dummyjson.com/products/${id}`);
   const product = await data.json();
