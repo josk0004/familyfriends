@@ -17,11 +17,22 @@ export default function AddProduct() {
         {state.error?.productName && (
           <p className="text-red-500">{state.error.productName}</p>
         )}
+        {state.error?.price && (
+          <p className="text-red-500">{state.error.price}</p>
+        )}
         <input
           type="text"
           name="productName"
           placeholder="Product Name"
           defaultValue={!state.success ? state.productName : ""}
+          className="rounded border p-2"
+        />
+        <input
+          type="number"
+          name="price"
+          placeholder="Price"
+          defaultValue={!state.success ? state.price : ""}
+          min={0}
           className="rounded border p-2"
         />
         <button
