@@ -28,7 +28,6 @@ export default function AddProduct() {
           className="rounded border p-2"
         />
         <input
-          type="number"
           name="price"
           placeholder="Price"
           defaultValue={!state.success ? state.price : ""}

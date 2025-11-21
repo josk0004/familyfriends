@@ -23,10 +23,10 @@ export const submitProduct = async (prevState, formData) => {
   }
   if (!price) {
     error.price = "Price is required.";
+  } else if (/[^\d.\-]/.test(price)) {
+    error.price = "Price must be a valid number.";
   } else if (isNaN(price) || Number(price) < 0) {
     error.price = "Price must be a positive number or 0.";
-  } else if (/[^\d.]/.test(price)) {
-    error.price = "Price must be a valid number.";
   }
   if (Object.keys(error).length > 0) {
     return { error, productName, price };
