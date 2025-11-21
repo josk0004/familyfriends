@@ -2,6 +2,7 @@
 
 export const submitProduct = async (prevState, formData) => {
   const error = {};
+  let success = null;
   const productName = formData.get("productName");
   const price = formData.get("price");
   if (!productName) {
@@ -31,5 +32,21 @@ export const submitProduct = async (prevState, formData) => {
   if (Object.keys(error).length > 0) {
     return { error, productName, price };
   }
-  return { success: true, productName, price };
+
+  // Simulate network delay
+  // await new Promise((resolve) => setTimeout(resolve, 2000));
+  const response = await fetch("https://dummyjson.com/products/add", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      title: productName,
+      price: Number(price),
+      /* other product data */
+    }),
+  });
+  console.log(response);
+
+  success = response.ok;
+
+  return { success, productName, price, error };
 };
